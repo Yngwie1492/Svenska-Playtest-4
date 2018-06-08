@@ -17,7 +17,7 @@
 (set: $dressed to 0)
 You wake up feeling unusually rested. The sun is shining and the melting snow from the roof produces a steady pitter-patter as it hits the ground. 
 
-That must mean you weren&#39;t woken up last night. Maybe the a monster isn&#39;t out to get you after all.
+That must mean you weren&#39;t woken up last night. Maybe the boogie man isn&#39;t out to get you after all.
 
 Time to get dressed.
 
@@ -97,7 +97,9 @@ The Kiosk is open and the salesman is reading the newspaper. The headline is abo
 [[Go back to Sven|torget]]</tw-passagedata><tw-passagedata pid="11" name="Rest1" tags="" position="1793.5,746.5" size="100,100">(set: $dinnerDrink to &quot;&quot;)
 You meet Sven&#39;s friends and sit down at the table. No one asks who you are, avoiding an embarrasing non-answer. 
 
-You don&#39;t have time to ponder why, as [[the waiter approaches your table.|Rest2]]</tw-passagedata><tw-passagedata pid="12" name="Rest2" tags="" position="1594.5,772.5" size="100,100">The waiter comes up and takes everyone&#39;s orders. He turns to you ans asks, &quot;Vad ska du ha?&quot;
+You don&#39;t have time to ponder why, as [[the waiter approaches your table.|Rest2]]</tw-passagedata><tw-passagedata pid="12" name="Rest2" tags="" position="1594.5,772.5" size="100,100">The waiter comes up and takes everyone&#39;s orders. He finally turns to you and asks, &quot;Vad ska du ha?&quot;
+
+What do you feel like having?
 
 (link:&quot;Ja ska ha en öl&quot;)[(set: $dinnerDrink to &quot;öl&quot;)(goto:&quot;Rest3&quot;)]
 
@@ -109,7 +111,10 @@ You don&#39;t have time to ponder why, as [[the waiter approaches your table.|Re
 (set: $rest6Sipped to 0)
 (set: $rest7Sipped to 0)
 (set: $pee to 0)
-&quot;So why is the team so bad?&quot; You ask Sven.
+
+You respond, &quot;En $dinnerDrink, tack.&quot;
+
+After placing your order you turn to Sven and ask, &quot;So why is the team so bad?&quot;
 
 &quot;They ran into some trouble a couple of years ago, when Benny bought them. He renamed them - &#39;the Jets&#39;. Like the song.&quot;
 
@@ -121,20 +126,20 @@ At this, Sven&#39;s friends grumble.
 
 &quot;Wow!&quot; You marvel at Benny&#39;s ability to make enemies in this town. 
 
-The waiter comes with your order, &quot;En $dinnerDrink, varsågod!&quot;
+The waiter comes with your order, &quot;Din $dinnerDrink, varsågod!&quot;
 
-(if: $rest4Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest4Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest4&quot;)]]
+(if: $rest4Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest4Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest4&quot;)]] (if: $rest4Sipped is 1)[You take a sip of your delicious drink. &quot;Ah, den är en bra $dinnerDrink!&quot;]
 
 [[&quot;Why do you still support the team?&quot;|Rest5]]
 </tw-passagedata><tw-passagedata pid="15" name="Rest5" tags="" position="1210.5,678.5" size="100,100">&quot;Loyalty? Habit? Masochism? We fans are more and more upset at the changes he&#39;s making. In response, he has threatened to sell the club, close the pet food factory and leave town.&quot; Sven says.
 
-(if: $rest5Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest5Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest5&quot;)]]
+(if: $rest5Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest5Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest5&quot;)]](if: $rest5Sipped is 1)[You take a sip of your delicious drink. &quot;Ah, den är en bra $dinnerDrink!&quot;]
 
 [[&quot;But isn&#39;t he a successful businessman?&quot;|Rest6]]</tw-passagedata><tw-passagedata pid="16" name="Rest6" tags="" position="1049.5,746.5" size="100,100">&quot;It&#39;s all a bunch of big talk from a small man. He inherited his business from his father, then bullied and bought out the competition. Football requires greater skills.&quot; He sighs, &quot;enough talk, let&#39;s watch the [[match|Rest7]].&quot;
 
-(if: $rest6Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest6Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest6&quot;)]]</tw-passagedata><tw-passagedata pid="17" name="Rest7" tags="" position="926.5,790.5" size="100,100">Just as you turn to the TV, the local team lets in another goal. There is more grumbling and a few shots are downed. 
+(if: $rest6Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest6Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest6&quot;)]](if: $rest6Sipped is 1)[You take a sip of your delicious drink. &quot;Ah, den är en bra $dinnerDrink!&quot;]</tw-passagedata><tw-passagedata pid="17" name="Rest7" tags="" position="926.5,790.5" size="100,100">Just as you turn to the TV, the local team lets in another goal. There is more grumbling and a few shots are downed. 
 
-(if: $rest7Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest7Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest7&quot;)]]
+(if: $rest7Sipped is 0)[(link:&quot;Take a sip&quot;)[(set: $rest7Sipped to +1)(set: $numberSips to $numberSips+1)(goto: &quot;Rest7&quot;)]](if: $rest7Sipped is 1)[You take a sip of your delicious drink. &quot;Ah, den är en bra $dinnerDrink!&quot;]
 
 People start to turn away from the game and talk amongst themselves. 
 
@@ -142,9 +147,11 @@ People start to turn away from the game and talk amongst themselves.
 
 (if: $numberSips &lt; 4)[Look at the [[bar|Rest8]]]</tw-passagedata><tw-passagedata pid="18" name="pee" tags="" position="932.5,586.5" size="100,100">(set: $pee to 1)
 
-Entering the restaurants lon bathroom, you see something chiselled on the inside of the stall door, 
+Entering the restaurant&#39;s lone bathroom, you see something carved on the inside of the stall door, 
 
-&quot;BENNY AR DÖD OCH JAG ÄR GLAD!&quot;
+&quot;BENNY AR DÖD X-P
+      OCH 
+JAG ÄR GLAD! :-)&quot; 
 
 What? Dead? Who wrote this? Should you tell someone? 
 
@@ -156,7 +163,7 @@ Sven and his friends look uncomfortable at the outburst. When you get back to th
 
 [[&quot;Vem är han?&quot;|Rest9]]
 
-[[&quot;Varför skrikar han?&quot;|Rest9]]</tw-passagedata><tw-passagedata pid="20" name="Rest9" tags="" position="412.5,811.5" size="100,100">Sven responds, &quot;He is Fredrik, our biggest superfan. He didn&#39;t used to be like this. Two years ago he was riding high. But he bet it all on our to be promoted to the second division. His whole life savings!&quot;
+[[&quot;Varför skrikar han?&quot;|Rest9]]</tw-passagedata><tw-passagedata pid="20" name="Rest9" tags="" position="412.5,811.5" size="100,100">Sven responds, &quot;He is Fredrik, our biggest superfan. He didn&#39;t used to be like this. Two years ago he was riding high. But he bet it all on FK Gladborg to be promoted up to the second division. His whole life savings!&quot;
 
 &quot;Så synd!&quot; you reply.
 
